@@ -57,10 +57,10 @@ Um GET pode consultar esses dados depois, ou gerar um relatório
 
 ##   Rota	                Método	            Função
      /	                    GET	                Teste da API (retorna mensagem)
-     /jogatina	            POST	            Registra uma sessão de jogo
+     /jogatina	            POST                Registra uma sessão de jogo
      /jogatina	            GET	                Lista todas as jogatinas salvas
-     /tarefa	            POST	            Registra uma tarefa ou estudo feito
-     /tarefa	            GET	                Lista todas as tarefas
+     /tarefa	            POST                Registra uma tarefa ou estudo feito
+     /tarefa	            GET                 Lista todas as tarefas
      /relatorio/semana	    GET                 Gera relatório da semana atual (tempo jogado, estudado, humores, etc)
 
 

@@ -1,6 +1,6 @@
-# Manual Técnico – GameLife Tracker (Versão 0.9)
+Manual Técnico – GameLife Tracker (Versão 0.9)
 
-# 🏗️ 1. Arquitetura Geral do Projeto
+1. Arquitetura Geral do Projeto
 
 Usuário → FastAPI → Validação Pydantic → Banco SQLite via SQLAlchemy
 
@@ -11,7 +11,7 @@ Banco de dados local: SQLite
 ORM (modelagem de tabelas): SQLAlchemy
 Acesso assíncrono ao banco: Databases
 
-# 🧠 2. Roteiro de Execução da API
+2. Roteiro de Execução da API
 
 O usuário envia um POST para /jogatina ou /tarefa
 O FastAPI recebe a requisição e valida os dados com os schemas (Pydantic)
@@ -20,7 +20,7 @@ Essa query é enviada ao banco SQLite usando database.execute()
 Os dados ficam salvos no arquivo gamelife.db
 Um GET pode consultar esses dados depois, ou gerar um relatório
 
-# 📦 3. Organização dos Arquivos
+3. Organização dos Arquivos
 
 | Arquivo           | Função                                        |
 |-------------------|-----------------------------------------------|
@@ -32,7 +32,7 @@ Um GET pode consultar esses dados depois, ou gerar um relatório
 | `gamelife.db`     | Banco de dados SQLite local                   |
 
 
-# 🧩 4. Principais Componentes Técnicos
+4. Principais Componentes Técnicos
 
 ## FastAPI
     Define rotas com @app.get() e @app.post()
@@ -53,7 +53,7 @@ Um GET pode consultar esses dados depois, ou gerar um relatório
     Permite executar comandos assíncronos no banco (await database.execute(...))
     Usado pra INSERT, SELECT, etc.
 
-# 🧾 5. Endpoints Criados
+5. Endpoints Criados
 
 ##   Rota	                Método	            Função
      /	                    GET	                Teste da API (retorna mensagem)
@@ -64,14 +64,14 @@ Um GET pode consultar esses dados depois, ou gerar um relatório
      /relatorio/semana	    GET                 Gera relatório da semana atual (tempo jogado, estudado, humores, etc)
 
 
-# 🧮 6. Lógica do Relatório
+6. Lógica do Relatório
 
 +Calcula a semana atual: segunda até domingo
 +Busca jogatinas e tarefas que ocorreram nesse intervalo
 +Usa sum() pra somar os tempos
 +Usa Counter() pra contar frequência de humores e dias ativos
 
-# 📌 7. Como rodar o projeto
+7. Como rodar o projeto
 
 python -m venv venv
 venv\Scripts\activate  # (Windows)
